@@ -3,7 +3,7 @@ class Kido < Formula
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
       revision: "be2c5b6d7599d7b8c643d3681b6f0b33a2930844"
-  version "0.1.0"
+  version "0.1.1"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "go" => :build
