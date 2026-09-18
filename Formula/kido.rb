@@ -2,7 +2,7 @@ class Kido < Formula
   desc "Tmux sidebar for Claude Code sessions"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "f0c95ae1e3a8ddcb2d05191d0a4b85c032bc4a6d"
+      revision: "be2c5b6d7599d7b8c643d3681b6f0b33a2930844"
   version "0.1.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
@@ -11,15 +11,15 @@ class Kido < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kido"
     bin.install "hooks/kido-hook.sh" => "kido-hook"
-    pkgshare.install "tmux/kido.tmux", "tmux/kido-side.tmux", "hooks/settings-hooks.json"
+    pkgshare.install "tmux/kido-side.tmux", "hooks/settings-hooks.json"
   end
 
   def caveats
     <<~EOS
-      tmux configs are in #{opt_pkgshare}: source kido-side.tmux with the
-      patched tmux (brew install andreypopp/tap/tmux) or kido.tmux with a
-      stock one. Merge settings-hooks.json into ~/.claude/settings.json so
-      Claude Code reports session status to the sidebar.
+      Needs the tmux fork: brew install andreypopp/tap/tmux
+      In ~/.tmux.conf:  source-file "#{opt_pkgshare}/kido-side.tmux"
+      Merge #{opt_pkgshare}/settings-hooks.json into ~/.claude/settings.json
+      so Claude Code reports session status to the sidebar.
     EOS
   end
 
