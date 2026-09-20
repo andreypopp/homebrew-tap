@@ -2,8 +2,8 @@ class Kido < Formula
   desc "Tmux sidebar for Claude Code sessions"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "0e8ec9ec66809a1fcf759b554c144e3f10da233c"
-  version "0.8.0"
+      revision: "24a100963aaf13546250514a7632e69d4d4902c9"
+  version "0.8.1"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "go" => :build
