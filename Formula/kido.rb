@@ -2,8 +2,8 @@ class Kido < Formula
   desc "Tmux sidebar for Claude Code sessions"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "772dcce008bb785ca9f213ee6134da1b56b23dd5"
-  version "0.10.5"
+      revision: "c7ec31936f27c38e60acda438844405980a9b0a1"
+  version "0.11.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "go" => :build
@@ -11,6 +11,7 @@ class Kido < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kido"
     pkgshare.install "tmux/kido-side.tmux"
+    pkgshare.install "shell"
   end
 
   def caveats
