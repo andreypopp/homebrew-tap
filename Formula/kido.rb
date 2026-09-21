@@ -2,8 +2,8 @@ class Kido < Formula
   desc "Tmux sidebar for Claude Code sessions"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "dc456fff3b35bf891d63d4575873e2d0651c97b7"
-  version "0.18.1"
+      revision: "abe48ce3840b1f7a2e0b4c9100c8ab1f0bca4df5"
+  version "0.19.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "go" => :build
@@ -17,9 +17,9 @@ class Kido < Formula
   def caveats
     <<~EOS
       Needs the tmux fork: brew install andreypopp/tap/tmux
-      In ~/.tmux.conf:  source-file "#{opt_pkgshare}/kido-side.tmux"
-      Then run  kido setup-claude  so Claude Code reports session status,
-      and optionally  kido setup-zsh  for shell panes to report too.
+      Then:  kido setup-tmux     loads the sidebar config
+             kido setup-claude   so Claude Code reports session status
+             kido setup-zsh      optional, for shell panes to report too
     EOS
   end
 
