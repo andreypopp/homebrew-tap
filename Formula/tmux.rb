@@ -2,10 +2,10 @@ class Tmux < Formula
   desc "Terminal multiplexer, with an interactive side status line (kido fork)"
   homepage "https://github.com/andreypopp/tmux"
   url "https://github.com/andreypopp/tmux.git",
-      revision: "ba2cfaa888faea8790ea02345f8d3f09d12a057b"
-  version "3.9-side.4"
+      revision: "b3e100d7694c019ffcc76137146a7d4fa7f69ba1"
+  version "3.9-side.5"
   license "ISC"
-  head "https://github.com/andreypopp/tmux.git", branch: "side-pane"
+  head "https://github.com/andreypopp/tmux.git", branch: "fork"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
