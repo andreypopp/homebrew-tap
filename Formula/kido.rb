@@ -3,7 +3,7 @@ class Kido < Formula
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
       revision: "02b64abf149bb053caf00897ccb0fb00cf4b18b0"
-  version "0.25.0"
+  version "0.25.1"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "autoconf" => :build
