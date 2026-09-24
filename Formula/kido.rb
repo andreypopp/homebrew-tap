@@ -2,7 +2,7 @@ class Kido < Formula
   desc "Terminal multiplexer for coding agent sessions: tmux with a live side column"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "18836bdfebe4f658128933fafddb1ae17a908d74"
+      revision: "f2d9ffa3023ee6f27d8e3b39a72b8713efb0577f"
   version "0.25.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
@@ -20,14 +20,13 @@ class Kido < Formula
   # kido runs only under the andreypopp/tmux fork (side status column,
   # tmux/tmux#5468, plus side-status-command and OSC 133 command-line
   # capture). The fork is the git submodule third_party/tmux, pinned by the
-  # kido revision above, and scripts/install-tmux-fork.sh builds it into
-  # bin/kido-tmux, which is what CI builds and tests against. It never
-  # shadows a stock tmux: kido starts its server on its own socket.
+  # kido revision above, and `make install` builds it into bin/kido-tmux
+  # via scripts/install-tmux-fork.sh, which is what CI builds and tests
+  # against. It never shadows a stock tmux: kido starts its server on its
+  # own socket, and both the binary and its man page are installed as
+  # kido-tmux/kido-tmux.1.
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/kido"
-    system "sh", "scripts/install-tmux-fork.sh", prefix
-    mv man1/"tmux.1", man1/"kido-tmux.1"
-    system "sh", "scripts/install-share.sh", pkgshare
+    system "make", "install", "PREFIX=#{prefix}", "GO_LDFLAGS=-s -w"
   end
 
   def caveats
