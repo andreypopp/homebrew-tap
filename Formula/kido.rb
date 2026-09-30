@@ -28,11 +28,16 @@ class Kido < Formula
   #
   # kido itself is OCaml built with dune package management: dune.lock pins
   # the compiler and every library, and dune downloads and builds them
-  # itself, so the build needs network access. Its cache (which also holds
-  # the git pins' clones) is kept inside the buildpath, since the sandbox
-  # may not write to HOME.
+  # itself, so the build needs network access. Its cache lives in
+  # HOMEBREW_CACHE, since the sandbox may not write to HOME, so a release
+  # that keeps dune.lock rebuilds only kido. It copies rather than
+  # hardlinks: the sandbox grants the build's tmpdir network access
+  # (sandbox.rb, allow_network path: tmpdir), and macOS then refuses a
+  # hardlink into it from a less privileged path (forbidden-link-priv),
+  # which dune counts as a cache miss.
   def install
-    ENV["DUNE_CACHE_ROOT"] = buildpath/".dune-cache"
+    ENV["DUNE_CACHE_ROOT"] = HOMEBREW_CACHE/"dune"
+    ENV["DUNE_CACHE_STORAGE_MODE"] = "copy"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
