@@ -2,13 +2,13 @@ class Kido < Formula
   desc "Terminal multiplexer for coding agent sessions: tmux with a live side column"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "9262fa28d647c547c66b54e9a610f6196ade8bd5"
-  version "0.28.0"
+      revision: "e2fc9c5aab074b545d59711c635ce8f9d366e4f3"
+  version "0.29.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "go" => :build
+  depends_on "dune" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "libevent"
@@ -25,8 +25,15 @@ class Kido < Formula
   # against. It never shadows a stock tmux: kido starts its server on its
   # own socket, and both the binary and its man page are installed as
   # kido-tmux/kido-tmux.1.
+  #
+  # kido itself is OCaml built with dune package management: dune.lock pins
+  # the compiler and every library, and dune downloads and builds them
+  # itself, so the build needs network access. Its cache (which also holds
+  # the git pins' clones) is kept inside the buildpath, since the sandbox
+  # may not write to HOME.
   def install
-    system "make", "install", "PREFIX=#{prefix}", "GO_LDFLAGS=-s -w"
+    ENV["DUNE_CACHE_ROOT"] = buildpath/".dune-cache"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 
   def caveats
@@ -43,8 +50,9 @@ class Kido < Formula
 
   test do
     assert_match "next-3.9", shell_output("#{bin}/kido-tmux -V")
+    tmux = "#{bin}/kido-tmux -f /dev/null -S #{testpath}/tmux.sock"
     assert_match "side-status-command",
-      shell_output("#{bin}/kido-tmux -f /dev/null -L homebrew-test start-server \\; show-options -g side-status-command \\; kill-server")
+      shell_output("#{tmux} start-server \\; show-options -g side-status-command \\; kill-server")
     assert_match "already inside tmux", shell_output("TMUX=x #{bin}/kido 2>&1", 1)
   end
 end
