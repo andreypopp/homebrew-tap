@@ -2,8 +2,8 @@ class Kido < Formula
   desc "Terminal multiplexer for coding agent sessions: tmux with a live side column"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "19446d721eee1f5c325271453e3f743bd5d37c20"
-  version "0.42.0"
+      revision: "31627cc45015b4efc044a3b3b52cc2fc19d5c181"
+  version "0.42.1"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "autoconf" => :build
