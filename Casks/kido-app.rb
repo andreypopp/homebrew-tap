@@ -1,6 +1,6 @@
 cask "kido-app" do
-  version "0.14.0"
-  sha256 "01567b5fe2d99f4dc331cfdf7a5305d8d7bb4ddb8bbd48eaf97cfc343bd2a0a7"
+  version "0.15.0"
+  sha256 "2154d2ccfbcf62951aeee17fdd367a08f68135b1f6e1c843018b1d9811adde38"
   url "https://github.com/andreypopp/kido/releases/download/kido-app%2F#{version}/Kido-#{version}.zip"
   name "Kido"
   desc "Native macOS client for the kido tmux agent multiplexer"
