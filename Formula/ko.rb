@@ -6,6 +6,7 @@ class Ko < Formula
   version "0.1.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
+  depends_on "node" => :build
   depends_on "rustup" => :build
 
   # Toolchains and Cargo dependencies need network access during the build.
