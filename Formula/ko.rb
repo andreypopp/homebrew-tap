@@ -2,8 +2,8 @@ class Ko < Formula
   desc "Terminal multiplexer CLI and server"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "1131d5dd2d2729282f7a736964355c357c1a810f"
-  version "0.5.0"
+      revision: "a89c2fbbbce8a1456b05746432d5bc3a656d7602"
+  version "0.5.1"
   head "https://github.com/andreypopp/kido.git", branch: "main"
 
   depends_on "node" => :build
