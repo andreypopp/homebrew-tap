@@ -2,11 +2,9 @@ class Ko < Formula
   desc "Terminal multiplexer CLI and server"
   homepage "https://github.com/andreypopp/kido"
   url "https://github.com/andreypopp/kido.git",
-      revision: "a89c2fbbbce8a1456b05746432d5bc3a656d7602"
-  version "0.5.1"
+      revision: "6c6375f91ffa94010b30e6064ee8b2446c05a9d0"
+  version "0.6.0"
   head "https://github.com/andreypopp/kido.git", branch: "main"
-
-  depends_on "node" => :build
   depends_on "rustup" => :build
 
   # Toolchains and Cargo dependencies need network access during the build.
