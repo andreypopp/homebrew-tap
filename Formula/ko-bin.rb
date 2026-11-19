@@ -1,23 +1,23 @@
 class KoBin < Formula
   desc "Terminal multiplexer CLI and server (prebuilt binaries)"
   homepage "https://github.com/andreypopp/kido"
-  version "0.6.0"
+  version "0.6.1"
 
   on_macos do
     on_arm do
-      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.0/ko-0.6.0-darwin-arm64.tar.gz"
-      sha256 "d748201c313cbdce0ba321d84957d006e51fc438202d61febb67266f7f9910f9"
+      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.1/ko-0.6.1-darwin-arm64.tar.gz"
+      sha256 "51c4b184c5f9ad4e8c133c15ef7cc2cd63dcbf3cd04f83c5fe7dfdcd24aa6543"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.0/ko-0.6.0-linux-arm64.tar.gz"
-      sha256 "67cda2270cc8d1fd2d447df2549ed83ad65353d3694eab7f9ea98f7906365865"
+      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.1/ko-0.6.1-linux-arm64.tar.gz"
+      sha256 "8b2422ec28b3f77b028fbe7d9c2701b9059a47db20b1d57392b1d40697b5de3e"
     end
     on_intel do
-      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.0/ko-0.6.0-linux-x86_64.tar.gz"
-      sha256 "05eb7e9f0fa2b90b000e09cbbf7ec1c2dcbc605c546b0c3ff76d9ce96a26c413"
+      url "https://github.com/andreypopp/kido/releases/download/ko/0.6.1/ko-0.6.1-linux-x86_64.tar.gz"
+      sha256 "e6ad4a34e3ddac1a0cf7fdbf46d9d923c6692eaa4c44bee969aac44fbc2ebe6e"
     end
   end
 
