@@ -1,9 +1,9 @@
 class Koa < Formula
   desc "Agent harness for ko"
   homepage "https://github.com/andreypopp/kido"
-  url "https://github.com/andreypopp/kido/releases/download/koa/0.2.0/koa-0.2.0.tar.gz"
-  sha256 "f6757af76bb7342a07f525a5465d9be6364eed38ad2065fd6c00b23f5c764a1e"
-  version "0.2.0"
+  url "https://github.com/andreypopp/kido/releases/download/koa/0.2.1/koa-0.2.1.tar.gz"
+  sha256 "69203f9e63d362a74eaf06df5eb96f11e3802bc7bf793d970dde9793f5ab53a3"
+  version "0.2.1"
   depends_on "node"
   depends_on "andreypopp/tap/pi-coding-agent"
 
