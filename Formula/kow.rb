@@ -3,9 +3,9 @@ class Kow < Formula
 
   desc "Manage a ko workspace server"
   homepage "https://github.com/andreypopp/kido"
-  url "https://github.com/andreypopp/kido/releases/download/kow/0.1.2/kow-0.1.2.tar.gz"
-  sha256 "ed6e77b6dc256bd8c655066ecc8b90fd7f8dc6a6c3ef199ecc12a293092337f9"
-  version "0.1.2"
+  url "https://github.com/andreypopp/kido/releases/download/kow/0.1.3/kow-0.1.3.tar.gz"
+  sha256 "fc063e1b09ebaae48ae30eb17d42f201439657d25bcb95a6be458b64910b12e1"
+  version "0.1.3"
   depends_on "python"
   depends_on "opentofu"
 
