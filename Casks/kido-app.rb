@@ -1,6 +1,6 @@
 cask "kido-app" do
-  version "0.36.2"
-  sha256 "4126ef5aa0285c265d842e4d24397cd1775f25427a803d40f604345d8c78f388"
+  version "0.36.3"
+  sha256 "8fdf881087c56b3c41e74886c5b21dde76700cf36d175758d6a218c1c42f7e49"
   url "https://github.com/andreypopp/kido/releases/download/kido-app%2F#{version}/Kido-#{version}.zip"
   name "Kido"
   desc "Native macOS client for the ko agent terminal server"
